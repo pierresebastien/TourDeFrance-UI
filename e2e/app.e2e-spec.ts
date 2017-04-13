@@ -1,10 +1,10 @@
-import { TouDeFrancePage } from './app.po';
+import { TourDeFrancePage } from './app.po';
 
 describe('tour-de-france-ui App', () => {
-  let page: TouDeFrancePage;
+  let page: TourDeFrancePage;
 
   beforeEach(() => {
-    page = new TouDeFrancePage();
+    page = new TourDeFrancePage();
   });
 
   it('should display message saying app works', () => {
