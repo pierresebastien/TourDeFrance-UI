@@ -6,6 +6,9 @@ import { HttpModule } from '@angular/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
+/* Gesture support for some material components */
+import 'hammerjs';
+
 @NgModule({
   declarations: [
     AppComponent
