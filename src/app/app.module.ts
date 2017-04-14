@@ -3,14 +3,20 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule, Http } from '@angular/http';
 
-import { AppRoutingModule } from './app-routing.module';
-import { AppComponent } from './app.component';
-
+// Third party dependencies
 import 'hammerjs'; // Gesture support for some material components
 import { RestangularModule, Restangular } from 'ng2-restangular';
 import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
 import { TranslatePoHttpLoader } from '@biesbjerg/ngx-translate-po-http-loader';
 
+// Application Modules
+import { AppRoutingModule } from './app-routing.module';
+
+// Application Services
+import { DrinkService } from './services/drink.service';
+
+// Application Components
+import { AppComponent } from './app.component';
 import { MenuComponent } from './components/menu/menu.component';
 import { HeaderComponent } from './components/header/header.component';
 import { DrinksComponent } from './components/management/drinks/drinks.component';
@@ -64,7 +70,7 @@ export function createTranslateLoader(http: Http) {
       }
     })
   ],
-  providers: [],
+  providers: [DrinkService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
