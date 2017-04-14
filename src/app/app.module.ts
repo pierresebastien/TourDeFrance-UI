@@ -6,8 +6,16 @@ import { HttpModule } from '@angular/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
-/* Gesture support for some material components */
+// Gesture support for some material components
 import 'hammerjs';
+import { RestangularModule, Restangular } from 'ng2-restangular';
+
+// Function for settting the default restangular configuration
+export function RestangularConfigFactory (RestangularProvider) {
+  const apiUrl: string = window.location.protocol.concat('//').concat(window.location.hostname).concat('/api');
+  RestangularProvider.setBaseUrl(apiUrl);
+  RestangularProvider.setDefaultHeaders({ 'Accept': 'application/json' });
+}
 
 @NgModule({
   declarations: [
@@ -17,7 +25,8 @@ import 'hammerjs';
     BrowserModule,
     FormsModule,
     HttpModule,
-    AppRoutingModule
+    AppRoutingModule,
+    RestangularModule.forRoot(RestangularConfigFactory)
   ],
   providers: [],
   bootstrap: [AppComponent]
