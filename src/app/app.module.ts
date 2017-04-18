@@ -11,13 +11,13 @@ import { TranslatePoHttpLoader } from '@biesbjerg/ngx-translate-po-http-loader';
 
 // Application Modules
 import { AppRoutingModule } from './app-routing.module';
+import { MenuModule } from './components/menu/menu.module';
 
 // Application Services
 import { DrinkService } from './services/drink.service';
 
 // Application Components
 import { AppComponent } from './app.component';
-import { MenuComponent } from './components/menu/menu.component';
 import { HeaderComponent } from './components/header/header.component';
 import { DrinksComponent } from './components/management/drinks/drinks.component';
 import { RacesComponent } from './components/management/races/races.component';
@@ -44,7 +44,6 @@ export function createTranslateLoader(http: Http) {
 @NgModule({
   declarations: [
     AppComponent,
-    MenuComponent,
     HeaderComponent,
     DrinksComponent,
     RacesComponent,
@@ -60,7 +59,6 @@ export function createTranslateLoader(http: Http) {
     BrowserModule,
     FormsModule,
     HttpModule,
-    AppRoutingModule,
     RestangularModule.forRoot(RestangularConfigFactory),
     TranslateModule.forRoot({
       loader: {
@@ -68,7 +66,9 @@ export function createTranslateLoader(http: Http) {
         useFactory: createTranslateLoader,
         deps: [Http]
       }
-    })
+    }),
+    AppRoutingModule,
+    MenuModule
   ],
   providers: [DrinkService],
   bootstrap: [AppComponent]
