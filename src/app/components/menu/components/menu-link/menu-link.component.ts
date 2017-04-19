@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+
+import { Page } from '../../models/page';
 
 @Component({
   selector: 'tdf-menu-link',
@@ -7,9 +9,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MenuLinkComponent implements OnInit {
 
+  @Input() page: Page;
+
   constructor() { }
 
   ngOnInit() {
   }
-
 }
