@@ -1,10 +1,13 @@
 import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule, Http } from '@angular/http';
 
 // Third party dependencies
+import { MaterialModule } from '@angular/material';
 import 'hammerjs'; // Gesture support for some material components
+import { FlexLayoutModule } from '@angular/flex-layout';
 import { RestangularModule, Restangular } from 'ng2-restangular';
 import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
 import { TranslatePoHttpLoader } from '@biesbjerg/ngx-translate-po-http-loader';
@@ -57,8 +60,10 @@ export function createTranslateLoader(http: Http) {
   ],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
     FormsModule,
     HttpModule,
+    MaterialModule.forRoot(),
     RestangularModule.forRoot(RestangularConfigFactory),
     TranslateModule.forRoot({
       loader: {
@@ -67,6 +72,7 @@ export function createTranslateLoader(http: Http) {
         deps: [Http]
       }
     }),
+    FlexLayoutModule,
     AppRoutingModule,
     MenuModule
   ],

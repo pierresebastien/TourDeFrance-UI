@@ -3,13 +3,13 @@
     hide-print>
     <header class="nav-header">
       <!-- TODO: hardcoded link in module.. -->
-      <a layout="column" [routerLink]="['/home']">
+      <a fxLayout="column" [routerLink]="['/home']">
         <!-- TODO: gravatar gravatar-src="'{{currentUser.email}}'" -->
         <img class="md-avatar" />
         <h1 class="md-heading">{{currentUser.displayName}}</h1>
       </a>
     </header>
-    <md-content flex role="navigation">
+    <md-content role="navigation">
       <ul class="site-menu">
         <tdf-menu-toggle *ngFor="section in sections" class="menu-section" section="section"></tdf-menu-toggle>
       </ul>

@@ -1,5 +1,5 @@
 <md-button class="md-button-toggle" (click)="toggle()" aria-controls="menu-{{section.name}}" aria-expanded="{{section.isOpen}}">
-	<div flex layout="row">
+	<div flex fxLayout="row">
 		{{section.name}}
 		<span flex></span>
 		<span aria-hidden="true" class="md-toggle-icon" [ngClass]="{'toggled' : section.isOpen}">
