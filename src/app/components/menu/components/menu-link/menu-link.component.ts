@@ -15,4 +15,8 @@ export class MenuLinkComponent implements OnInit {
 
   ngOnInit() {
   }
+
+  public select() {
+
+  }
 }

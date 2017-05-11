@@ -1,18 +1,19 @@
-<md-button class="md-button-toggle" (click)="toggle()" aria-controls="menu-{{section.name}}" aria-expanded="{{section.isOpen}}">
-	<div flex fxLayout="row">
+<!-- TODO: [attr.aria-controls]="menu-{{section.name}}" [attr.aria-expanded]="{{section.isOpen}}" -->
+<button md-button class="md-button-toggle" (click)="toggle()">
+	<div fxFlex fxLayout="row">
 		{{section.name}}
-		<span flex></span>
+		<span fxFlex></span>
 		<span aria-hidden="true" class="md-toggle-icon" [ngClass]="{'toggled' : section.isOpen}">
-			<md-icon md-font-icon="fa fa-fw fa-angle-down"></md-icon>
+			<md-icon fontSet="fontawesome" fontIcon="fa-angle-down" class="fa fa-fw"></md-icon>
 		</span>
 	</div>
 	<span class="md-visually-hidden">
 		Toggle {{section.isOpen? 'expanded' : 'collapsed'}}
 	</span>
-</md-button>
+</button>
 
 <ul id="menu-{{section.name}}" class="menu-toggle-list">
-	<li *ngFor="page in section.pages">
+	<li *ngFor="let page of section.pages">
 		<tdf-menu-link [page]="page"></tdf-menu-link>
 	</li>
 </ul>
