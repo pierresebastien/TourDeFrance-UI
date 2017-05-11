@@ -1,6 +1,6 @@
 # Tour de France UI
 
-[![Build Status](https://travis-ci.org/pierresebastien/TourDeFrance-UI.svg)](https://travis-ci.org/pierresebastien/TourDeFrance-UI)|
+[![Build Status](https://travis-ci.org/pierresebastien/TourDeFrance-UI.svg)](https://travis-ci.org/pierresebastien/TourDeFrance-UI)
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.6.7.
 
