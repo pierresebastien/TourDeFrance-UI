@@ -11,9 +11,7 @@ export class MenuComponent implements OnInit {
 
   @Input() sections: Section[];
 
-  constructor() { }
-
-  ngOnInit() {
+  ngOnInit(): void {
+    // TODO
   }
-
 }

@@ -11,12 +11,11 @@ export class MenuToggleComponent implements OnInit {
 
   @Input() section: Section;
 
-  constructor() { }
-
-  ngOnInit() {
+  ngOnInit(): void {
+    // TODO
   }
 
-  public toggle() {
+  public toggle(): void {
     // var $ul = this.$element.find('ul');
     // var $li = $ul[0].querySelector('a.active');
     // var docsMenuContent = document.querySelector('.site-menu').parentNode;

@@ -7,9 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TeamsComponent implements OnInit {
 
-  constructor() { }
-
-  ngOnInit() {
+  ngOnInit(): void {
+    // TODO
   }
-
 }

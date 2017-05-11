@@ -1,7 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 
-/* TODO: to remove */
-import * as _ from 'lodash';
 import { TranslateService } from '@ngx-translate/core';
 
 import { Section } from './components/menu/models/section';
@@ -20,7 +18,7 @@ export class AppComponent implements OnInit {
     translate.setDefaultLang('fr');*/
   }
 
-  ngOnInit() {
+  ngOnInit(): void {
     this.sections = [
       {
         name: 'Home',

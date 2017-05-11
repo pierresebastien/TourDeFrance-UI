@@ -1,4 +1,4 @@
-import { TestBed, async } from '@angular/core/testing';
+import { TestBed, async, ComponentFixture } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
 
 import { AppComponent } from './app.component';
@@ -16,8 +16,8 @@ describe('AppComponent', () => {
   }));
 
   it('should create the app', async(() => {
-    const fixture = TestBed.createComponent(AppComponent);
-    const app = fixture.debugElement.componentInstance;
+    const fixture: ComponentFixture<AppComponent> = TestBed.createComponent(AppComponent);
+    const app: any = fixture.debugElement.componentInstance;
     expect(app).toBeTruthy();
   }));
 });

@@ -8,7 +8,7 @@ import { HttpModule, Http } from '@angular/http';
 import { MaterialModule } from '@angular/material';
 import 'hammerjs'; // Gesture support for some material components
 import { FlexLayoutModule } from '@angular/flex-layout';
-import { RestangularModule, Restangular } from 'ng2-restangular';
+import { RestangularModule } from 'ng2-restangular';
 import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
 import { TranslatePoHttpLoader } from '@biesbjerg/ngx-translate-po-http-loader';
 
@@ -33,14 +33,14 @@ import { ConfigComponent } from './components/admin/config/config.component';
 import { UsersComponent } from './components/admin/users/users.component';
 
 // Function for settting the default restangular configuration
-export function RestangularConfigFactory(RestangularProvider) {
+export function RestangularConfigFactory(RestangularProvider: any): void {
   const apiUrl: string = window.location.protocol.concat('//').concat(window.location.hostname).concat('/api');
   RestangularProvider.setBaseUrl(apiUrl);
   RestangularProvider.setDefaultHeaders({ 'Accept': 'application/json' });
 }
 
 // Compilation warning with this, see https://github.com/biesbjerg/ngx-translate-po-http-loader/issues/2
-export function createTranslateLoader(http: Http) {
+export function createTranslateLoader(http: Http): TranslateLoader {
   return new TranslatePoHttpLoader(http, 'i18n', '.po');
 }
 

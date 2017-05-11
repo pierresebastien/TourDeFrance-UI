@@ -1,11 +1,11 @@
 import { browser, element, by } from 'protractor';
 
 export class TourDeFrancePage {
-  navigateTo() {
+  navigateTo(): any {
     return browser.get('/');
   }
 
-  getParagraphText() {
+  getParagraphText(): any {
     return element(by.css('tdf-root h1')).getText();
   }
 }

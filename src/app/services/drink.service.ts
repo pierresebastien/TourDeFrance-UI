@@ -24,12 +24,12 @@ export class DrinkService {
 
   // TODO: review create, update and delete
   public createDrink(name: string, volume: number, alcoholByVolume: number, subDrinks: any): Observable<Drink> {
-    const request = { Name: name, Volume: volume, AlcoholByVolume: alcoholByVolume, SubDrinkDefinitions: subDrinks };
+    const request: any = { Name: name, Volume: volume, AlcoholByVolume: alcoholByVolume, SubDrinkDefinitions: subDrinks };
     return this.restangular.all(this.baseApiRoute).customPOST(request);
   }
 
   public updateDrink(id: string, name: string, volume: number, alcoholByVolume: number, subDrinks: any): Observable<Drink> {
-    const request = { Name: name, Volume: volume, AlcoholByVolume: alcoholByVolume, SubDrinkDefinitions: subDrinks };
+    const request: any = { Name: name, Volume: volume, AlcoholByVolume: alcoholByVolume, SubDrinkDefinitions: subDrinks };
     return this.restangular.one(this.baseApiRoute, id).customPUT(request);
   }
 

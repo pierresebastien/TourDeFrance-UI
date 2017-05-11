@@ -11,12 +11,11 @@ export class MenuLinkComponent implements OnInit {
 
   @Input() page: Page;
 
-  constructor() { }
-
-  ngOnInit() {
+  ngOnInit(): void {
+    // TODO
   }
 
-  public select() {
-
+  public select(): void {
+    // TODO
   }
 }
