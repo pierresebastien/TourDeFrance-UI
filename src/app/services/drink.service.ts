@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
 
-import { Restangular } from 'ng2-restangular';
+import { Restangular } from 'ngx-restangular';
 
 import { Drink } from '../models/drink';
 

@@ -8,7 +8,7 @@ import { HttpModule, Http } from '@angular/http';
 import { MaterialModule } from '@angular/material';
 import 'hammerjs'; // Gesture support for some material components
 import { FlexLayoutModule } from '@angular/flex-layout';
-import { RestangularModule } from 'ng2-restangular';
+import { RestangularModule } from 'ngx-restangular';
 import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
 import { TranslatePoHttpLoader } from '@biesbjerg/ngx-translate-po-http-loader';
 
