@@ -2,12 +2,10 @@ import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { HttpModule, Http } from '@angular/http';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
 
 // Third party dependencies
-import { MaterialModule } from '@angular/material';
 import 'hammerjs'; // Gesture support for some material components
-import { FlexLayoutModule } from '@angular/flex-layout';
 import { RestangularModule } from 'ngx-restangular';
 import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
 import { TranslatePoHttpLoader } from '@biesbjerg/ngx-translate-po-http-loader';
@@ -40,7 +38,7 @@ export function RestangularConfigFactory(RestangularProvider: any): void {
 }
 
 // Compilation warning with this, see https://github.com/biesbjerg/ngx-translate-po-http-loader/issues/2
-export function createTranslateLoader(http: Http): TranslateLoader {
+export function createTranslateLoader(http: HttpClient): TranslateLoader {
   return new TranslatePoHttpLoader(http, 'i18n', '.po');
 }
 
@@ -62,17 +60,15 @@ export function createTranslateLoader(http: Http): TranslateLoader {
     BrowserModule,
     BrowserAnimationsModule,
     FormsModule,
-    HttpModule,
-    MaterialModule.forRoot(),
+    HttpClientModule,
     RestangularModule.forRoot(RestangularConfigFactory),
     TranslateModule.forRoot({
       loader: {
         provide: TranslateLoader,
         useFactory: createTranslateLoader,
-        deps: [Http]
+        deps: [HttpClient]
       }
     }),
-    FlexLayoutModule,
     AppRoutingModule,
     MenuModule
   ],

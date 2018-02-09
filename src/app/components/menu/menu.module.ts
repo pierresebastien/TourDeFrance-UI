@@ -4,9 +4,8 @@ import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 
 // Third party dependencies
-import { MaterialModule } from '@angular/material';
+import { MatSidenavModule, MatIconModule, MatIconRegistry } from '@angular/material';
 import 'hammerjs'; // Gesture support for some material components
-import { FlexLayoutModule } from '@angular/flex-layout';
 import { TranslateModule } from '@ngx-translate/core';
 
 // Application Components
@@ -19,8 +18,8 @@ import { MenuLinkComponent } from './components/menu-link/menu-link.component';
     BrowserAnimationsModule,
     CommonModule,
     RouterModule,
-    MaterialModule,
-    FlexLayoutModule,
+    MatSidenavModule,
+    MatIconModule,
     TranslateModule
   ],
   declarations: [
@@ -28,6 +27,12 @@ import { MenuLinkComponent } from './components/menu-link/menu-link.component';
     MenuToggleComponent,
     MenuLinkComponent
   ],
-  exports: [MenuComponent]
+  exports: [MenuComponent],
+  providers: [MatIconRegistry]
 })
-export class MenuModule { }
+
+export class MenuModule {
+  constructor(public matIconRegistry: MatIconRegistry) {
+    matIconRegistry.registerFontClassAlias('fontawesome', 'fa');
+  }
+}

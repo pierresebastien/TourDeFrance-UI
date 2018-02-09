@@ -1,6 +1,6 @@
 <!-- TODO: ui-sref="{{page.route}}" -->
 <button md-button [ngClass]="{'active' : page.isSelected}" [routerLink]="[page.route]" (click)="select()">
-	<md-icon fontSet="fontawesome" fontIcon="fa-{{page.icon}}" class="fa fa-fw"></md-icon>
+	<mat-icon fontSet="fontawesome" fontIcon="fa-{{page.icon}}" class="fa fa-fw"></mat-icon>
 	<span translate>{{page.name}}</span>
 	<span class="md-visually-hidden" *ngIf="page.isSelected">
 		current page

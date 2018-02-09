@@ -1,5 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 
+import { MatIconModule } from '@angular/material/icon';
+
 import { Page } from '../../models/page';
 
 @Component({
