@@ -1,0 +1,53 @@
+image: node:latest
+
+stages:
+ - init
+ - build
+ - test
+ - quality
+ - package
+  
+variables:
+ GIT_SUBMODULE_STRATEGY: recursive
+
+init:node:
+ stage: init
+ script:
+  - npm install
+ artifacts:
+  expire_in: 20 mins
+  untracked: true
+
+build:node:
+ stage: build
+ script:
+  - ./node_modules/.bin/ng build --aot
+ dependencies:
+  - init:node
+
+#test:node:
+# stage: test
+# script:
+#  - ./node_modules/.bin/ng test --watch false --single-run
+# dependencies:
+#  - init:node
+
+lint:node:
+ stage: quality
+ script:
+  - ./node_modules/.bin/ng lint
+ dependencies:
+  - init:node
+
+package:node:
+ stage: package
+ script:
+  - ./node_modules/.bin/ng build --prod
+ dependencies:
+  - init:node
+ artifacts:
+  name: "$CI_PROJECT_NAME_$CI_COMMIT_TAG"
+  paths:
+   - dist/
+ only:
+  - tags
