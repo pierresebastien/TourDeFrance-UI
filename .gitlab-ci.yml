@@ -45,7 +45,7 @@ sonarqube:node:
  stage: quality
  image: ciricihq/gitlab-sonar-scanner
  script:
-  - sonar-scanner -Dsonar.projectKey=gitlab:$CI_PROJECT_ID -Dsonar.sources=./src -Dsonar.host.url=https://sonarcloud.io -Dsonar.login=$SONARCLOUD_TOKEN -Dsonar.projectName="$DISPLAY_NAME"
+  - sonar-scanner -Dsonar.projectKey=gitlab:$CI_PROJECT_ID -Dsonar.organization=pierresebastien-github -Dsonar.host.url=https://sonarcloud.io -Dsonar.login=$SONARCLOUD_TOKEN -Dsonar.sources=./src -Dsonar.projectName="$DISPLAY_NAME"
  dependencies:
   - init:node
  only:
