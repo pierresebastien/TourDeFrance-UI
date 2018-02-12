@@ -6,5 +6,3 @@ install:
   - npm install
 script:
   - ./node_modules/.bin/ng build --prod
-# - ./node_modules/.bin/ng test --watch false --single-run
-  - ./node_modules/.bin/ng lint
