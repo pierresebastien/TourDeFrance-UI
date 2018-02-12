@@ -40,6 +40,7 @@ lint:node:
   - ./node_modules/.bin/ng lint
  dependencies:
   - init:node
+ allow_failure: true
 
 sonarqube:node:
  stage: quality
