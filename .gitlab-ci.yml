@@ -9,6 +9,7 @@ stages:
   
 variables:
  GIT_SUBMODULE_STRATEGY: recursive
+ DISPLAY_NAME: "Tour de France UI"
 
 init:node:
  stage: init
@@ -36,6 +37,14 @@ lint:node:
  stage: quality
  script:
   - ./node_modules/.bin/ng lint
+ dependencies:
+  - init:node
+
+sonarqube:node:
+ stage: quality
+ image: ciricihq/gitlab-sonar-scanner
+ script:
+  - sonar-scanner -Dsonar.projectKey=gitlab:$CI_PROJECT_ID -Dsonar.sources=./src -Dsonar.host.url=https://sonarcloud.io -Dsonar.login=$SONARCLOUD_TOKEN -Dsonar.branch.name=$CI_COMMIT_REF_NAME -Dsonar.projectName="$DISPLAY_NAME"
  dependencies:
   - init:node
 
