@@ -46,6 +46,9 @@ sonarqube:node:
  stage: quality
  image: ciricihq/gitlab-sonar-scanner
  script:
+  # Install nodejs to enable sonarTS
+  - curl -sL https://deb.nodesource.com/setup_8.x | bash -
+  - apt-get install -y nodejs
   - sonar-scanner -Dsonar.projectKey=gitlab:$CI_PROJECT_ID -Dsonar.organization=pierresebastien-github -Dsonar.host.url=https://sonarcloud.io -Dsonar.login=$SONARCLOUD_TOKEN -Dsonar.sources=./src -Dsonar.branch.name=$CI_COMMIT_REF_NAME -Dsonar.projectName="$DISPLAY_NAME"
  dependencies:
   - init:node
